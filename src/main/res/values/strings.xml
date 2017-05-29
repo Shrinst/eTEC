@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">eTECApp</string>
     <string name="action_settings">Settings</string>
+    <string name="action_logout">Cerrar Sesión</string>
     <string name="facebook_app_id">1233280070102946</string>
     <string name="cancel_login">Cancelaste la operación</string>
     <string name="error_login">Ocurrió un error</string>
