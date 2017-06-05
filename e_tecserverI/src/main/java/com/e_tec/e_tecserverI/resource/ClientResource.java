@@ -1,6 +1,5 @@
 package com.e_tec.e_tecserverI.resource;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -15,7 +14,6 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import com.e_tec.e_tecserverI.model.Client;
-import com.e_tec.e_tecserverI.model.Product;
 import com.e_tec.e_tecserverI.service.ClientService;
 
 @Path("clientlist")

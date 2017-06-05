@@ -25,11 +25,11 @@ public class XMLWriterProduct {
 
 			Document document = new Document();
 
-			Element theRoot = new Element("BinaryTree");
+			Element theRoot = new Element("Products");
 			document.setRootElement(theRoot);
 			
 			for (Product product : productList) {
-				Element node = new Element("Node");
+				Element node = new Element("product");
 				
 				
 				Element name = new Element("name");
@@ -40,11 +40,17 @@ public class XMLWriterProduct {
 				id.addContent(new Text(product.getId() + ""));
 				Element description = new Element("description");
 				description.addContent(new Text(product.getDescription()));
+				Element category = new Element("category");
+				category.addContent(new Text(product.getCategory()));
+				Element amount = new Element("amount");
+				amount.addContent(new Text(String.valueOf(product.getAmount())));
 				
 				node.addContent(name);
 				node.addContent(imageURL);
 				node.addContent(id);
 				node.addContent(description);
+				node.addContent(category);
+				node.addContent(amount);
 				
 				theRoot.addContent(node);			
 				
@@ -53,9 +59,9 @@ public class XMLWriterProduct {
 			XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
 
 			outputter.output(document,
-					new FileOutputStream(new File("./src/main/java/org/meditec/meditecserver/xmlFiles/NewFile1.xml")));
+					new FileOutputStream(new File("C:/Users/aguis/Desktop/Programitas Java Web/e_tecserverI/src/main/resources/products.xml")));
 			
-			System.out.println("Wrote to File");
+			//System.out.println("Wrote to File");
 
 		} catch (Exception e) {
 			e.printStackTrace();

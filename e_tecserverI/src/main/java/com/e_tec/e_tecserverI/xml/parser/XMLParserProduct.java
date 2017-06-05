@@ -1,5 +1,6 @@
 package com.e_tec.e_tecserverI.xml.parser;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,8 +31,8 @@ public class XMLParserProduct {
 		
 		try {
 			DocumentBuilder builder = factory.newDocumentBuilder();
-			Document doc = builder.parse("./src/main/java/org/meditec/meditecserver/xmlFiles/NewFile1.xml");
-			NodeList nodeList = doc.getElementsByTagName("Node");
+			Document doc = builder.parse("C:/Users/aguis/Desktop/Programitas Java Web/e_tecserverI/src/main/resources/products.xml");
+			NodeList nodeList = doc.getElementsByTagName("product");
 			
 			for (int i = 0; i < nodeList.getLength(); i++) {
 				
@@ -61,6 +62,12 @@ public class XMLParserProduct {
 								break;
 							case "description":
 								product.setDescription((name.getTextContent()));
+								break;
+							case "category":
+								product.setCategory(name.getTextContent());
+								break;
+							case "amount":
+								product.setAmount(Integer.parseInt(name.getTextContent()));
 								break;
 							}				
 						}

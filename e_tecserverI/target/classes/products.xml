@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Products>
+  <product>
+    <name>Dell Inspiron 15</name>
+    <imageURL>http://i.dell.com/sites/imagecontent/products/PublishingImages/inspiron-15-5551-5552-5558-laptop/laptop-inspiron-15-5000-polaris-mag-pdp-module-2.jpg</imageURL>
+    <id>12</id>
+    <description>hgogjeg</description>
+    <category>AparatosElectrónicos</category>
+    <amount>1</amount>
+  </product>
+</Products>
