@@ -1,6 +1,9 @@
 package com.example.aguis.etecapp.model;
 
-public class Product {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Product implements Parcelable {
 
     private String name;
     private String imageURL;
@@ -70,4 +73,41 @@ public class Product {
         this.amount = amount;
     }
 
+
+    protected Product(Parcel in) {
+        name = in.readString();
+        imageURL = in.readString();
+        id = in.readInt();
+        description = in.readString();
+        category = in.readString();
+        amount = in.readInt();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeString(imageURL);
+        dest.writeInt(id);
+        dest.writeString(description);
+        dest.writeString(category);
+        dest.writeInt(amount);
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<Product> CREATOR = new Parcelable.Creator<Product>() {
+        @Override
+        public Product createFromParcel(Parcel in) {
+            return new Product(in);
+        }
+
+        @Override
+        public Product[] newArray(int size) {
+            return new Product[size];
+        }
+    };
 }

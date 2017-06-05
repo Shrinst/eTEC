@@ -12,4 +12,17 @@
         android:orderInCategory="200"
         android:title="@string/action_logout"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_cart"
+        android:orderInCategory="300"
+        android:title="@string/action_cart"
+        android:icon="@drawable/ic_local_grocery_store_black_24dp"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/action_search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="@string/action_search"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="always|collapseActionView" />
+
 </menu>

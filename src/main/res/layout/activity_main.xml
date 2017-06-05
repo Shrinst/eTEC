@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F2C445"
     tools:context="com.example.aguis.etecapp.MainActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -16,16 +17,18 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@android:color/holo_red_dark"
+            android:background="#F78307"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
         <android.support.design.widget.TabLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_red_dark"
+            android:background="#F78307"
             android:id="@+id/mTab_ID"/>
 
     </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_main" />
 
     <android.support.v4.view.ViewPager
         android:layout_width="match_parent"

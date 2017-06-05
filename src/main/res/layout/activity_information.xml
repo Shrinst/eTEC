@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2C445"
+    tools:context="com.example.aguis.etecapp.InformationActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="36dp"
+            android:id="@+id/productImage" />
+
+        <TextView
+            android:id="@+id/tvProductName"
+            android:layout_width="229dp"
+            android:layout_height="42dp"
+            android:text="@string/productnametextview"
+            android:textSize="25sp"
+            android:textColor="#0000ff"
+            android:layout_below="@id/productImage" />
+
+        <TextView
+            android:id="@+id/tvCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/categorytextview"
+            android:textSize="15sp"
+            android:textColor="#0000ff"
+            android:layout_marginTop="69dp"
+            android:layout_below="@+id/productImage"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/tvId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/productidtextview"
+            android:textSize="15sp"
+            android:textColor="#0000ff"
+            android:layout_marginTop="44dp"
+            android:layout_below="@+id/tvCategory"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pricetextview"
+            android:textSize="15sp"
+            android:textColor="#0000ff"
+            android:layout_marginTop="56dp"
+            android:layout_below="@+id/tvAmount"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/amounttextview"
+            android:textSize="15sp"
+            android:textColor="#0000ff"
+            android:layout_marginTop="52dp"
+            android:layout_below="@+id/tvId"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/descriptiontextview"
+            android:textSize="15sp"
+            android:textColor="#0000ff"
+            android:layout_marginTop="49dp"
+            android:layout_below="@+id/tvPrice"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:id="@+id/btnBuy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/buybutton"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+</ScrollView>

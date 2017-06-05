@@ -28,6 +28,10 @@ public class CustomAdapter extends BaseAdapter {
     int resource;
     LayoutInflater inflater;
 
+    public CustomAdapter(Context context) {
+        this.context = context;
+    }
+
     public CustomAdapter(Context context, List<Product> products) {
         this.context = context;
         this.products = products;
@@ -61,7 +65,7 @@ public class CustomAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.listmodel, parent, false);
         }
 
-        Product product = (Product) getItem(position);
+        final Product product = (Product) getItem(position);
 
         TextView nameTxt = (TextView) convertView.findViewById(R.id.txtName);
         TextView priceTxt = (TextView) convertView.findViewById(R.id.txtPrice);
@@ -69,16 +73,26 @@ public class CustomAdapter extends BaseAdapter {
 
         nameTxt.setText(product.getName());
         priceTxt.setText(product.getDescription());
-        Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(imageView);
-        //Picasso.with(context).load(product.getImageURL()).into(imageView);
+        //Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(imageView);
+        Picasso.with(context).load(product.getImageURL()).into(imageView);
 
         /*convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, name, Toast.LENGTH_LONG).show();
+                Toast.makeText(context, product.getName(), Toast.LENGTH_LONG).show();
             }
         });*/
 
         return convertView;
+    }
+
+    public void setFilter(List<Product> productModels){
+        products = new ArrayList<>();
+        products.addAll(productModels);
+        notifyDataSetChanged();
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 }

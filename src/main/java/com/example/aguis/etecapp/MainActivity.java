@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -39,6 +40,9 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -58,11 +62,18 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
 
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.remove("android:support:fragments");
+    }
+
     private void addPages() {
         PagerAdapter pagerAdapter = new PagerAdapter(this.getSupportFragmentManager());
-        pagerAdapter.addFragment(new VideoGameFragment());
-        pagerAdapter.addFragment(new HomeApplianceFragment());
-        pagerAdapter.addFragment(new ElectronicApplianceFragment());
+        pagerAdapter.addFragment(new VideoGameFragment(), "Video Juegos");
+        pagerAdapter.addFragment(new HomeApplianceFragment(), "Electrodomésticos ");
+        pagerAdapter.addFragment(new ElectronicApplianceFragment(), "Apartos Electrónicos");
 
         viewPager.setAdapter(pagerAdapter);
     }
@@ -76,7 +87,9 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+        menu.clear();
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        super.onCreateOptionsMenu(menu);
         return true;
     }
 
@@ -95,7 +108,9 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
             case R.id.action_logout:
                 logout();
                 break;
-
+            case R.id.action_cart:
+                Toast.makeText(this, "Csrt", Toast.LENGTH_SHORT).show();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
