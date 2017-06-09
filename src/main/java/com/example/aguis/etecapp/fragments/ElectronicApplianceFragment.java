@@ -1,8 +1,11 @@
 package com.example.aguis.etecapp.fragments;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
@@ -15,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.aguis.etecapp.InformationActivity;
 import com.example.aguis.etecapp.R;
@@ -31,6 +35,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import static android.app.Activity.RESULT_OK;
+
 /**
  * Created by aguis on 28/5/2017.
  */
@@ -41,6 +47,8 @@ public class ElectronicApplianceFragment extends Fragment implements SearchView.
     CustomAdapter customAdapter;
     List<Product> productList;
     List<Product> filterList;
+
+    private static final int VOICE_RECOGNITION_REQUEST_CODE = 1001;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -97,6 +105,9 @@ public class ElectronicApplianceFragment extends Fragment implements SearchView.
         final SearchView searchView = (SearchView) MenuItemCompat.getActionView(item);
         searchView.setOnQueryTextListener(this);
 
+        SearchManager searchManager = (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getActivity().getComponentName()));
+
         MenuItemCompat.setOnActionExpandListener(item,
                 new MenuItemCompat.OnActionExpandListener() {
                     @Override
@@ -112,6 +123,63 @@ public class ElectronicApplianceFragment extends Fragment implements SearchView.
                         return true; // Return true to expand action view
                     }
                 });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.action_voice:
+                Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+                intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, getClass().getPackage().getName());
+                intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Diganos el producto que busca");
+                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH);
+                startActivityForResult(intent, VOICE_RECOGNITION_REQUEST_CODE);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
+            ArrayList<String> textMatchList = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+
+            final List<Product> filteredProductList = filter(productList, textMatchList.get(0));
+            customAdapter.setFilter(filteredProductList);
+
+            if (!textMatchList.isEmpty()) {
+                if (textMatchList.get(0).contains("search")) {
+                    String searchQuery = textMatchList.get(0).replace("search", " ");
+                    Intent search = new Intent(Intent.ACTION_WEB_SEARCH);
+                    search.putExtra(SearchManager.QUERY, searchQuery);
+                    startActivity(search);
+                }
+                else {
+                    //  mlvTextMatches.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, textMatchList));
+                }
+            }
+        }
+        else if (resultCode == RecognizerIntent.RESULT_AUDIO_ERROR) {
+            showToastMessage("Audio Error");
+        }
+        else if (resultCode == RecognizerIntent.RESULT_CLIENT_ERROR) {
+            showToastMessage("Client Error");
+        }
+        else if (resultCode == RecognizerIntent.RESULT_NETWORK_ERROR) {
+            showToastMessage("Network Error");
+        }
+        else if (resultCode == RecognizerIntent.RESULT_NO_MATCH) {
+            showToastMessage("No Match");
+        }
+        else if (resultCode == RecognizerIntent.RESULT_SERVER_ERROR) {
+            showToastMessage("Server Error");
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public void showToastMessage(String message) {
+        Toast.makeText(ElectronicApplianceFragment.this.getActivity(), message, Toast.LENGTH_LONG).show();
     }
 
     private void requestData(String uri) {
@@ -134,6 +202,11 @@ public class ElectronicApplianceFragment extends Fragment implements SearchView.
         final List<Product> filteredProductList = filter(productList, newText);
         customAdapter.setFilter(filteredProductList);
         return true;
+    }
+
+    public void doSearch(String newText) {
+        final List<Product> filteredProductList = filter(productList, newText);
+        customAdapter.setFilter(filteredProductList);
     }
 
     private List<Product> filter(List<Product> products, String query) {
@@ -179,6 +252,7 @@ public class ElectronicApplianceFragment extends Fragment implements SearchView.
                                 jsonObject.getString("imageURL"),
                                 jsonObject.getInt("id"),
                                 jsonObject.getInt("amount"),
+                                jsonObject.getInt("price"),
                                 jsonObject.getString("description"),
                                 jsonObject.getString("category")
                         ));

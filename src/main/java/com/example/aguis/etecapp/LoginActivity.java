@@ -69,9 +69,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void requestData(String uri) {
 
-        ArrayList<Product> products = new ArrayList<>();
-
-        String[] attributes = { "name", "photo", "cart" };
+        String[] attributes = { "name", "photo"};
         String[] values = { profile.getFirstName(), profile.getProfilePictureUri(200, 200).toString() };
 
         RequestPackage requestPackage = new RequestPackage();

@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         // Inflate the menu; this adds items to the action bar if it is present.
         menu.clear();
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
         super.onCreateOptionsMenu(menu);
         return true;
     }
@@ -109,7 +110,8 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
                 logout();
                 break;
             case R.id.action_cart:
-                Toast.makeText(this, "Csrt", Toast.LENGTH_SHORT).show();
+                Intent intentCart = new Intent(MainActivity.this, CartActivity.class);
+                startActivity(intentCart);
                 break;
         }
 

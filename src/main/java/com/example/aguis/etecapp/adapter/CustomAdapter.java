@@ -72,16 +72,8 @@ public class CustomAdapter extends BaseAdapter {
         ImageView imageView = (ImageView) convertView.findViewById(R.id.coverPageImage);
 
         nameTxt.setText(product.getName());
-        priceTxt.setText(product.getDescription());
-        //Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(imageView);
+        priceTxt.setText("$" + product.getPrice());
         Picasso.with(context).load(product.getImageURL()).into(imageView);
-
-        /*convertView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, product.getName(), Toast.LENGTH_LONG).show();
-            }
-        });*/
 
         return convertView;
     }

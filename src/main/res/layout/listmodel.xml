@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:textSize="20sp"
-            android:textColor="#0000ff"
+            android:textColor="@color/modelTextColor"
             android:text="Product Name"/>
 
         <TextView
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:textSize="20sp"
-            android:textColor="#0000ff"
+            android:textColor="@color/modelTextColor"
             android:text="Price"/>
 
     </LinearLayout>

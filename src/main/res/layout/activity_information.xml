@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F2C445"
+    android:background="@color/inforBackgroundColor"
     tools:context="com.example.aguis.etecapp.InformationActivity">
 
     <RelativeLayout
@@ -25,7 +25,7 @@
             android:layout_height="42dp"
             android:text="@string/productnametextview"
             android:textSize="25sp"
-            android:textColor="#0000ff"
+            android:textColor="@color/infoTextColor"
             android:layout_below="@id/productImage" />
 
         <TextView
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:text="@string/categorytextview"
             android:textSize="15sp"
-            android:textColor="#0000ff"
+            android:textColor="@color/infoTextColor"
             android:layout_marginTop="69dp"
             android:layout_below="@+id/productImage"
             android:layout_alignParentStart="true" />
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:text="@string/productidtextview"
             android:textSize="15sp"
-            android:textColor="#0000ff"
+            android:textColor="@color/infoTextColor"
             android:layout_marginTop="44dp"
             android:layout_below="@+id/tvCategory"
             android:layout_alignParentStart="true" />
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:text="@string/pricetextview"
             android:textSize="15sp"
-            android:textColor="#0000ff"
+            android:textColor="@color/infoTextColor"
             android:layout_marginTop="56dp"
             android:layout_below="@+id/tvAmount"
             android:layout_alignParentStart="true" />
@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:text="@string/amounttextview"
             android:textSize="15sp"
-            android:textColor="#0000ff"
+            android:textColor="@color/infoTextColor"
             android:layout_marginTop="52dp"
             android:layout_below="@+id/tvId"
             android:layout_alignParentStart="true" />
@@ -78,7 +78,7 @@
             android:layout_height="wrap_content"
             android:text="@string/descriptiontextview"
             android:textSize="15sp"
-            android:textColor="#0000ff"
+            android:textColor="@color/infoTextColor"
             android:layout_marginTop="49dp"
             android:layout_below="@+id/tvPrice"
             android:layout_alignParentStart="true" />
@@ -87,8 +87,9 @@
             android:id="@+id/btnBuy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/buybutton"
-            android:layout_alignParentTop="true"
+            android:text="@string/cartbutton"
+            android:textColor="@color/infoTextColor"
+            android:background="@color/cartbtnBackground"
             android:layout_alignParentEnd="true" />
 
     </RelativeLayout>

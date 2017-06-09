@@ -3,4 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="mainBackgroundColor">#045B61</color>
+    <color name="barColor">#353334</color>
+    <color name="modelTextColor">#ffffff</color>
+    <color name="inforBackgroundColor">#045B61</color>
+    <color name="infoTextColor">#ffffff</color>
+    <color name="cartbtnBackground">#01A3E8</color>
 </resources>

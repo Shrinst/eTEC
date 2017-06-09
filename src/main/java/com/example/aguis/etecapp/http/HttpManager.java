@@ -246,4 +246,58 @@ public class HttpManager {
             }
         }
     }
+
+    public static String deleteDataJSON(RequestPackage requestPackage) {
+        BufferedReader reader = null;
+        HttpURLConnection httpURLConnection = null;
+        String uri = requestPackage.getUri();
+
+        try {
+            URL url = new URL(uri);
+            httpURLConnection = (HttpURLConnection) url.openConnection();
+            httpURLConnection.setRequestProperty("Content-Type", "application/json");
+            httpURLConnection.setRequestProperty("Accept", "application/json");
+            httpURLConnection.setRequestMethod(requestPackage.getMethod());
+            httpURLConnection.setDoOutput(true);
+
+            JSONObject jsonObject = new JSONObject();
+
+            for (int i = 0; i < requestPackage.getMessageAttributes().size(); i++) {
+                jsonObject.accumulate(requestPackage.getMessageAttributes().get(i), requestPackage.getMessageValues().get(i));
+            }
+            /*jsonObject.accumulate("author", "TOBE");
+            jsonObject.accumulate("id", 1);
+            jsonObject.accumulate("message", "Hello From Android");*/
+            String data = jsonObject.toString();
+
+            OutputStream outputStream = httpURLConnection.getOutputStream();
+            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+            writer.write(data);
+            writer.close();
+            outputStream.close();
+
+
+            StringBuilder stringBuilder = new StringBuilder();
+            reader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                stringBuilder.append(line + "\n");
+            }
+
+            return stringBuilder.toString();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 }

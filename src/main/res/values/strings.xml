@@ -4,15 +4,22 @@
     <string name="action_logout">Cerrar Sesión</string>
     <string name="action_search">Buscar</string>
     <string name="action_cart">Abrir Carrtio de Compras</string>
+    <string name="action_voice">Busqueda por voz</string>
     <string name="facebook_app_id">1233280070102946</string>
     <string name="cancel_login">Cancelaste la operación</string>
     <string name="error_login">Ocurrió un error</string>
     <string name="logout">Cerrar Sesión</string>
-    <string name="buybutton">Comprar</string>
+    <string name="cartbutton">Añadir al Carrito</string>
     <string name="amounttextview">Cantidad del producto: </string>
     <string name="productnametextview">Nombre: </string>
     <string name="pricetextview">Precio: </string>
     <string name="categorytextview">Categoria: </string>
     <string name="productidtextview">Id del Producto: </string>
     <string name="descriptiontextview">Descripción: </string>
+    <string name="deleteCartItemTitle">Elimiar elemento del carrito</string>
+    <string name="deleteCartItemMessage">No se podrá recuperar el elemento eliminado. ¿Desea continuar?</string>
+    <string name="deleteCartItemPositive">Eliminar</string>
+    <string name="payCart">Ingrese su número de tarjeta</string>
+    <string name="payCartPositive">Pagar</string>
+    <string name="paycartbutton">Pagar</string>
 </resources>

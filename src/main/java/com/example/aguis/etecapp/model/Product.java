@@ -11,16 +11,18 @@ public class Product implements Parcelable {
     private String description;
     private String category;
     private int amount;
+    private int price;
 
     public Product() {
 
     }
 
-    public Product(String name, String imageURL, int id, int amount, String category, String description) {
+    public Product(String name, String imageURL, int id, int amount, int price, String category, String description) {
         this.name = name;
         this.imageURL = imageURL;
         this.id = id;
         this.amount = amount;
+        this.price = price;
         this.category = category;
         this.description = description;
     }
@@ -73,6 +75,14 @@ public class Product implements Parcelable {
         this.amount = amount;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
 
     protected Product(Parcel in) {
         name = in.readString();
@@ -81,6 +91,7 @@ public class Product implements Parcelable {
         description = in.readString();
         category = in.readString();
         amount = in.readInt();
+        price = in.readInt();
     }
 
     @Override
@@ -96,6 +107,7 @@ public class Product implements Parcelable {
         dest.writeString(description);
         dest.writeString(category);
         dest.writeInt(amount);
+        dest.writeInt(price);
     }
 
     @SuppressWarnings("unused")
