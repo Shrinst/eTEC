@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Clients>
+  <client>
+    <name>Emmanuelle</name>
+    <photo>https://graph.facebook.com/1265817256869503/picture?height=200&amp;width=200&amp;migration_overrides=%7Boctober_2012%3Atrue%7D</photo>
+    <cart>
+      <product>
+        <name>VIBOX Warrior Paquet 7 Gaming PC</name>
+        <imageURL>https://images-na.ssl-images-amazon.com/images/I/51SOoST%2BU-L._SX425_.jpg</imageURL>
+        <id>578569</id>
+        <description>VideoJuegos</description>
+        <category>4,0GHz CPU 4-Core AMD, GTX 1060 GPU, Extremo, Alto rendimiento, Ordenador de sobremesa para oficina Gaming 
+  			     vale de juego, con monitor, IluminaciÃƒÆ’Ã‚Â n interna verde (3,8GHz (4,0GHz Turbo) Procesador CPU Quad 4-Core AMD 
+  			     FX 4300, Nvidia GeForce GTX 1060 3GB Tarjeta grÃƒÆ’Ã‚Â¡fica, 16 GB Memoria RAM de DDR3, velocidad de RAM: 1600MHz, 
+  			     1TB (1000GB) Sata III 7200 rpm disco duro HDD, Fuente de alimentaciÃƒÆ’Ã‚Â n de 85+, Predator de Vibox LED verde caja, 
+  			     NingÃƒÆ’Ã‚Âºn sistema operativo</category>
+        <amount>13</amount>
+        <price>1000</price>
+      </product>
+      <product>
+        <name>PES 2017</name>
+        <imageURL>http://www.3djuegos.com/juegos/13129/pes_2017/fotos/ficha/pes_2017-3455689.jpg</imageURL>
+        <id>486851</id>
+        <description>VideoJuegos</description>
+        <category>tftft</category>
+        <amount>5</amount>
+        <price>35</price>
+      </product>
+      <product>
+        <name>Metal Gear Solid 3</name>
+        <imageURL>https://vignette3.wikia.nocookie.net/metalgear/images/f/f1/Subcover.jpg/revision/latest/scale-to-width-down/
+			150?cb=20080521162003</imageURL>
+        <id>578464</id>
+        <description>VideoJuegos</description>
+        <category>Utilice el camuflaje sabiamente para sobrevivir
+			profundamente en territorio hostil Infiltrarse y sobrevivir
+			prestando atenciÃ³n a sus habilidades de caza e instintos Utilice los entornos
+			interactivos para su ventaja -
+			la creaciÃ³n de trampas para atrapar a los enemigos y las presas Cuenta
+			con una superproducciÃ³n musical
+			compuesta por Harry Gregson-Williams</category>
+        <amount>20</amount>
+        <price>30</price>
+      </product>
+      <product>
+        <name>PES 2017</name>
+        <imageURL>http://www.3djuegos.com/juegos/13129/pes_2017/fotos/ficha/pes_2017-3455689.jpg</imageURL>
+        <id>486851</id>
+        <description>VideoJuegos</description>
+        <category>tftft</category>
+        <amount>4</amount>
+        <price>35</price>
+      </product>
+      <product>
+        <name>Witcher 3</name>
+        <imageURL>http://static.fnac-static.com/multimedia/ES/images_produits/ES/Zoom%20Produit%20technique/6/1/0/3391891979016/tsp20140610160915/The-Witcher-3-Wild-Hunt-Edicion-Day-1-PS4.jpg</imageURL>
+        <id>486837</id>
+        <description>VideoJuegos</description>
+        <category>The Witcher 3: Wild Hunt: un juego de rol para nueva
+			generaciÃ³n, cuya historia se desarrolla en un mundo abierto,
+			ambientado en un universo de fantasÃ­a, grÃ¡ficamente impresionante</category>
+        <amount>13</amount>
+        <price>30</price>
+      </product>
+      <product>
+        <name>Play Sataion 4</name>
+        <imageURL>https://images-na.ssl-images-amazon.com/images/I/51ROi4d4puL._AC_SX215_.jpg</imageURL>
+        <id>486832</id>
+        <description>VideoJuegos</description>
+        <category>hgogjeg</category>
+        <amount>10</amount>
+        <price>275</price>
+      </product>
+    </cart>
+  </client>
+  <client>
+    <name>Noguera</name>
+    <photo>NFJBJGG</photo>
+    <cart />
+  </client>
+  <client>
+    <name>Ema</name>
+    <photo>NFJBJGG</photo>
+    <cart />
+  </client>
+  <client>
+    <name>Ema2</name>
+    <photo>NFJBJGG</photo>
+    <cart />
+  </client>
+  <client>
+    <name>TOBE</name>
+    <photo>jfishgos</photo>
+    <cart>
+      <product>
+        <name>PS4</name>
+        <imageURL>JFKDG</imageURL>
+        <id>45</id>
+        <description>GG</description>
+        <category>juegos</category>
+        <amount>1</amount>
+        <price>0</price>
+      </product>
+      <product>
+        <name>PS3</name>
+        <imageURL>J</imageURL>
+        <id>46</id>
+        <description>GA</description>
+        <category>juegos</category>
+        <amount>5</amount>
+        <price>0</price>
+      </product>
+      <product>
+        <name>PS4</name>
+        <imageURL>JFKDG</imageURL>
+        <id>45</id>
+        <description>GG</description>
+        <category>juegos</category>
+        <amount>1</amount>
+        <price>0</price>
+      </product>
+    </cart>
+  </client>
+  <client>
+    <name>Milton</name>
+    <photo>NFJBJGG</photo>
+    <cart />
+  </client>
+</Clients>

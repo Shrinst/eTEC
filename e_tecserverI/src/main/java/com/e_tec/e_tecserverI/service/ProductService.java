@@ -43,7 +43,15 @@ public class ProductService {
 	}
 
 	public Product addProduct(Product product) {
-		productList.put(product.getId(), product);
+		
+		if (this.isInList(product.getId())) {
+			Product temp = productList.get(product.getId());
+			int amount = temp.getAmount();
+			temp.setAmount(++amount);
+		} else {
+			productList.put(product.getId(), product);
+		}		
+		
 		XMLWriterProduct.writeXML(new ArrayList<>(productList.values()));
 		return product;
 	}
@@ -58,9 +66,28 @@ public class ProductService {
 		return product;
 	}
 
-	public void deleteProduct(int id) {
-		productList.remove(id);
+	public void deleteProduct(int id) {		
+		if (productList.get(id).getAmount() != 1) {			
+			Product temp = productList.get(id);
+			int amount = temp.getAmount();
+			temp.setAmount(--amount);
+		} else {
+			productList.remove(id);
+		}
 
 		XMLWriterProduct.writeXML(new ArrayList<>(productList.values()));
+	}
+	
+	private boolean isInList(int id) {				
+		boolean found = false;
+		
+		for (Product product : productList.values()) {
+			if (product.getId() == id) {
+				found = true;
+				return found;			
+			}
+		}
+		
+		return found;
 	}
 }

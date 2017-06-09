@@ -1,6 +1,5 @@
 package com.e_tec.e_tecserverI.xml.parser;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -69,6 +68,8 @@ public class XMLParserProduct {
 							case "amount":
 								product.setAmount(Integer.parseInt(name.getTextContent()));
 								break;
+							case "price":
+								product.setPrice(Integer.parseInt(name.getTextContent()));
 							}				
 						}
 					}

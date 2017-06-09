@@ -7,17 +7,19 @@ public class Product {
     private int id;
     private String description;
     private String category;
+    private int price;
     private int amount;
     
     public Product() {
         
     }
 
-    public Product(String name, String imageURL, int id, int amount, String category, String description) {
+    public Product(String name, String imageURL, int id, int amount, int price, String category, String description) {
         this.name = name;
         this.imageURL = imageURL;
         this.id = id;
         this.amount = amount;
+        this.price = price;
         this.category = category;
         this.description = description;
     }
@@ -68,5 +70,13 @@ public class Product {
 
 	public void setAmount(int amount) {
 		this.amount = amount;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
 	}     
 }

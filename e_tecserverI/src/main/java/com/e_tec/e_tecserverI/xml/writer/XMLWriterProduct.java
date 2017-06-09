@@ -44,6 +44,8 @@ public class XMLWriterProduct {
 				category.addContent(new Text(product.getCategory()));
 				Element amount = new Element("amount");
 				amount.addContent(new Text(String.valueOf(product.getAmount())));
+				Element price = new Element("price");
+				price.addContent(new Text(String.valueOf(product.getPrice())));
 				
 				node.addContent(name);
 				node.addContent(imageURL);
@@ -51,6 +53,7 @@ public class XMLWriterProduct {
 				node.addContent(description);
 				node.addContent(category);
 				node.addContent(amount);
+				node.addContent(price);
 				
 				theRoot.addContent(node);			
 				

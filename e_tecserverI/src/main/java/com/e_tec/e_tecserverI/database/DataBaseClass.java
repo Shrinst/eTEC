@@ -4,21 +4,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.xml.bind.annotation.XmlTransient;
-
 import com.e_tec.e_tecserverI.model.Client;
 import com.e_tec.e_tecserverI.model.Product;
+import com.e_tec.e_tecserverI.xml.parser.XMLParserClient;
 import com.e_tec.e_tecserverI.xml.parser.XMLParserProduct;
 
 public class DataBaseClass {
 	
 	private static Map<Integer, Product> productList = new HashMap<>();
-    private static Map<String, Client> clientList = new HashMap<>();
-
-    public DataBaseClass() {
-    }
+    private static Map<String, Client> clientList = new HashMap<>();      
     
-    @XmlTransient
     public static Map<Integer, Product> getProductList() {
     	List<Product> products = XMLParserProduct.getNodes();
     	for (Product product : products) {
@@ -28,6 +23,10 @@ public class DataBaseClass {
     } 
     
     public static Map<String, Client> getClientList() {
+    	List<Client> clients = XMLParserClient.getNodes();
+    	for (Client client : clients) {
+    		clientList.put(client.getName(), client);
+    	}
         return clientList;
     }
 }

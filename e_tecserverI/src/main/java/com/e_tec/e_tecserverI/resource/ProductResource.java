@@ -46,7 +46,7 @@ public class ProductResource {
 	
 	@DELETE
 	@Path("{productId}")
-	public void deleteProduct(@PathParam("productId") int id) {
+	public void deleteProduct(@PathParam("productId") int id) {		
 		productService.deleteProduct(id);
 	}	
 	

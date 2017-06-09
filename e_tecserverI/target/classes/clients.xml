@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Clients>
+  <client>
+    <name>Emmanuelle</name>
+    <photo>https://graph.facebook.com/1265817256869503/picture?height=200&amp;width=200&amp;migration_overrides=%7Boctober_2012%3Atrue%7D</photo>
+    <cart>
+      <product>
+        <name>Dell Inspiron 15</name>
+        <imageURL>http://i.dell.com/sites/imagecontent/products/PublishingImages/inspiron-15-5551-5552-5558-laptop/
+    			laptop-inspiron-15-5000-polaris-mag-pdp-module-2.jpg</imageURL>
+        <id>12</id>
+        <description>AparatosElectrÃ³nicos</description>
+        <category>hgogjeg</category>
+        <amount>1</amount>
+        <price>500</price>
+      </product>
+      <product>
+        <name>Whirlpool JT 479 IX Encimera 33L 1000W Negro</name>
+        <imageURL>https://images-na.ssl-images-amazon.com/images/I/81xFX4VVrXL._SL1500_.jpg</imageURL>
+        <id>577694</id>
+        <description>Electrodomesticos</description>
+        <category>Acero inoxidable - Microondas (Encimera, 33 L, 1000 W,
+			Giratorio, Tocar, Negro, Acero inoxidable, 1200 W)</category>
+        <amount>37</amount>
+        <price>50</price>
+      </product>
+      <product>
+        <name>Witcher 3</name>
+        <imageURL>http://static.fnac-static.com/multimedia/ES/images_produits/ES/Zoom%20Produit%20technique/6/1/0/3391891979016/tsp20140610160915/The-Witcher-3-Wild-Hunt-Edicion-Day-1-PS4.jpg</imageURL>
+        <id>486837</id>
+        <description>VideoJuegos</description>
+        <category>The Witcher 3: Wild Hunt: un juego de rol para nueva
+			generaciÃ³n, cuya historia se desarrolla en un mundo abierto,
+			ambientado en un universo de fantasÃ­a, grÃ¡ficamente impresionante</category>
+        <amount>13</amount>
+        <price>30</price>
+      </product>
+    </cart>
+  </client>
+  <client>
+    <name>Noguera</name>
+    <photo>NFJBJGG</photo>
+    <cart />
+  </client>
+  <client>
+    <name>Ema</name>
+    <photo>NFJBJGG</photo>
+    <cart />
+  </client>
+  <client>
+    <name>Ema2</name>
+    <photo>NFJBJGG</photo>
+    <cart />
+  </client>
+  <client>
+    <name>TOBE</name>
+    <photo>jfishgos</photo>
+    <cart>
+      <product>
+        <name>PS4</name>
+        <imageURL>JFKDG</imageURL>
+        <id>45</id>
+        <description>GG</description>
+        <category>juegos</category>
+        <amount>1</amount>
+        <price>0</price>
+      </product>
+      <product>
+        <name>PS3</name>
+        <imageURL>J</imageURL>
+        <id>46</id>
+        <description>GA</description>
+        <category>juegos</category>
+        <amount>5</amount>
+        <price>0</price>
+      </product>
+      <product>
+        <name>PS4</name>
+        <imageURL>JFKDG</imageURL>
+        <id>45</id>
+        <description>GG</description>
+        <category>juegos</category>
+        <amount>1</amount>
+        <price>0</price>
+      </product>
+    </cart>
+  </client>
+  <client>
+    <name>Milton</name>
+    <photo>NFJBJGG</photo>
+    <cart />
+  </client>
+</Clients>

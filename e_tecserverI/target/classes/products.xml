@@ -1,11 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Products>
   <product>
+    <name>VIBOX Warrior Paquet 7 Gaming PC</name>
+    <imageURL>https://images-na.ssl-images-amazon.com/images/I/51SOoST%2BU-L._SX425_.jpg</imageURL>
+    <id>578569</id>
+    <description>4,0GHz CPU 4-Core AMD, GTX 1060 GPU, Extremo, Alto rendimiento, Ordenador de sobremesa para oficina Gaming 
+  			     vale de juego, con monitor, IluminaciÃƒÂ n interna verde (3,8GHz (4,0GHz Turbo) Procesador CPU Quad 4-Core AMD 
+  			     FX 4300, Nvidia GeForce GTX 1060 3GB Tarjeta grÃƒÂ¡fica, 16 GB Memoria RAM de DDR3, velocidad de RAM: 1600MHz, 
+  			     1TB (1000GB) Sata III 7200 rpm disco duro HDD, Fuente de alimentaciÃƒÂ n de 85+, Predator de Vibox LED verde caja, 
+  			     NingÃƒÂºn sistema operativo</description>
+    <category>VideoJuegos</category>
+    <amount>13</amount>
+    <price>1000</price>
+  </product>
+  <product>
+    <name>Apple MacBook Air - PortÃ¡til de 13" (Intel i5-5250U, 8 GB RAM,
+			128 GB, teclado QWERTY espaÃ±ol), color gris</name>
+    <imageURL>https://images-na.ssl-images-amazon.com/images/I/51wWclmPaKL._SX425_.jpg</imageURL>
+    <id>678568</id>
+    <description>Procesador Intel Core i5-5250U, Dual-Core a 1.6 GHz y
+			cache de 3 MB
+			Pantalla de 13.3", con una resoluciÃ³n de 1440 x 900 pÃ­xeles
+			Memoria DDR3 SDRAM de 8 GB y disco duro SSD 128 GB
+			Incluye tarjeta grafica Intel HD Graphics 6000</description>
+    <category>AparatosElectrónicos</category>
+    <amount>31</amount>
+    <price>500</price>
+  </product>
+  <product>
+    <name>Witcher 3</name>
+    <imageURL>http://static.fnac-static.com/multimedia/ES/images_produits/ES/Zoom%20Produit%20technique/6/1/0/3391891979016/tsp20140610160915/The-Witcher-3-Wild-Hunt-Edicion-Day-1-PS4.jpg</imageURL>
+    <id>486837</id>
+    <description>The Witcher 3: Wild Hunt: un juego de rol para nueva
+			generación, cuya historia se desarrolla en un mundo abierto,
+			ambientado en un universo de fantasía, gráficamente impresionante</description>
+    <category>VideoJuegos</category>
+    <amount>13</amount>
+    <price>30</price>
+  </product>
+  <product>
+    <name>PES 2017</name>
+    <imageURL>http://www.3djuegos.com/juegos/13129/pes_2017/fotos/ficha/pes_2017-3455689.jpg</imageURL>
+    <id>486851</id>
+    <description>tftft</description>
+    <category>VideoJuegos</category>
+    <amount>5</amount>
+    <price>35</price>
+  </product>
+  <product>
+    <name>Whirlpool JT 479 IX Encimera 33L 1000W Negro</name>
+    <imageURL>https://images-na.ssl-images-amazon.com/images/I/81xFX4VVrXL._SL1500_.jpg</imageURL>
+    <id>577694</id>
+    <description>Acero inoxidable - Microondas (Encimera, 33 L, 1000 W,
+			Giratorio, Tocar, Negro, Acero inoxidable, 1200 W)</description>
+    <category>Electrodomesticos</category>
+    <amount>39</amount>
+    <price>50</price>
+  </product>
+  <product>
+    <name>Play Sataion 4</name>
+    <imageURL>https://images-na.ssl-images-amazon.com/images/I/51ROi4d4puL._AC_SX215_.jpg</imageURL>
+    <id>486832</id>
+    <description>hgogjeg</description>
+    <category>VideoJuegos</category>
+    <amount>10</amount>
+    <price>275</price>
+  </product>
+  <product>
+    <name>Metal Gear Solid 3</name>
+    <imageURL>https://vignette3.wikia.nocookie.net/metalgear/images/f/f1/Subcover.jpg/revision/latest/scale-to-width-down/
+			150?cb=20080521162003</imageURL>
+    <id>578464</id>
+    <description>Utilice el camuflaje sabiamente para sobrevivir
+			profundamente en territorio hostil Infiltrarse y sobrevivir
+			prestando atención a sus habilidades de caza e instintos Utilice los entornos
+			interactivos para su ventaja -
+			la creación de trampas para atrapar a los enemigos y las presas Cuenta
+			con una superproducción musical
+			compuesta por Harry Gregson-Williams</description>
+    <category>VideoJuegos</category>
+    <amount>20</amount>
+    <price>30</price>
+  </product>
+  <product>
+    <name>Estufa de Exterior Portátil Oh My Home</name>
+    <imageURL>https://images-na.ssl-images-amazon.com/images/I/61NacwSpWGL._SX425_.jpg</imageURL>
+    <id>675875</id>
+    <description>¿Todavía no tienes la estufa de exterior portátil Oh My
+			Home? Esta estufa de leña es lo que necesitas para
+			calentarte en invierno y disfrutar de las noches de verano con tus familiares y
+			amigos. ¡Disfruta de tu jardín
+			o terraza de la mejor manera posible!</description>
+    <category>Electrodomesticos</category>
+    <amount>35</amount>
+    <price>20</price>
+  </product>
+  <product>
     <name>Dell Inspiron 15</name>
-    <imageURL>http://i.dell.com/sites/imagecontent/products/PublishingImages/inspiron-15-5551-5552-5558-laptop/laptop-inspiron-15-5000-polaris-mag-pdp-module-2.jpg</imageURL>
+    <imageURL>http://i.dell.com/sites/imagecontent/products/PublishingImages/inspiron-15-5551-5552-5558-laptop/
+			laptop-inspiron-15-5000-polaris-mag-pdp-module-2.jpg</imageURL>
     <id>12</id>
     <description>hgogjeg</description>
     <category>AparatosElectrónicos</category>
     <amount>1</amount>
+    <price>500</price>
   </product>
 </Products>
