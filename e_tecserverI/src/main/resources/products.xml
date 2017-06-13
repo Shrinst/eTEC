@@ -14,7 +14,7 @@
     <price>1000</price>
   </product>
   <product>
-    <name>Apple MacBook Air - PortÃ¡til de 13" (Intel i5-5250U, 8 GB RAM,
+    <name>Apple MacBook Air - Portátil de 13" (Intel i5-5250U, 8 GB RAM,
 			128 GB, teclado QWERTY espaÃ±ol), color gris</name>
     <imageURL>https://images-na.ssl-images-amazon.com/images/I/51wWclmPaKL._SX425_.jpg</imageURL>
     <id>678568</id>
@@ -23,9 +23,9 @@
 			Pantalla de 13.3", con una resoluciÃ³n de 1440 x 900 pÃ­xeles
 			Memoria DDR3 SDRAM de 8 GB y disco duro SSD 128 GB
 			Incluye tarjeta grafica Intel HD Graphics 6000</description>
-    <category>AparatosElectrónicos</category>
-    <amount>31</amount>
-    <price>500</price>
+    <category>AparatosElectronicos</category>
+    <amount>30</amount>
+    <price>520</price>
   </product>
   <product>
     <name>Witcher 3</name>
@@ -35,8 +35,8 @@
 			generación, cuya historia se desarrolla en un mundo abierto,
 			ambientado en un universo de fantasía, gráficamente impresionante</description>
     <category>VideoJuegos</category>
-    <amount>12</amount>
-    <price>30</price>
+    <amount>11</amount>
+    <price>38</price>
   </product>
   <product>
     <name>PES 2017</name>
@@ -54,16 +54,16 @@
     <description>Acero inoxidable - Microondas (Encimera, 33 L, 1000 W,
 			Giratorio, Tocar, Negro, Acero inoxidable, 1200 W)</description>
     <category>Electrodomesticos</category>
-    <amount>39</amount>
+    <amount>37</amount>
     <price>50</price>
   </product>
   <product>
-    <name>Play Sataion 4</name>
+    <name>Play Station 4</name>
     <imageURL>https://images-na.ssl-images-amazon.com/images/I/51ROi4d4puL._AC_SX215_.jpg</imageURL>
     <id>486832</id>
     <description>hgogjeg</description>
     <category>VideoJuegos</category>
-    <amount>9</amount>
+    <amount>7</amount>
     <price>275</price>
   </product>
   <product>
@@ -101,8 +101,8 @@
 			laptop-inspiron-15-5000-polaris-mag-pdp-module-2.jpg</imageURL>
     <id>12</id>
     <description>hgogjeg</description>
-    <category>AparatosElectrónicos</category>
+    <category>AparatosElectronicos</category>
     <amount>1</amount>
-    <price>500</price>
+    <price>510</price>
   </product>
 </Products>

@@ -13,12 +13,7 @@ public class ClientService {
 	private Map<String, Client> clientList = DataBaseClass.getClientList();
 
 	public ClientService() {
-//		Client client = new Client("TOBE", "jfishgos");
-//		client.getCart().add(new Product("PS4", "JFKDG", 45, 1, "juegos", "GG"));
-//		client.getCart().add(new Product("PS4", "JFKDG", 45, 1, "juegos", "GG"));
-//		clientList.put("TOBE", client);
-//		clientList.put("Milton", new Client("Milton", "NFJBJGG"));
-//		clientList.put("Noguera", new Client("Noguera", "NFJBJGG"));
+		
 	}
 
 	public List<Client> getAllClient() {

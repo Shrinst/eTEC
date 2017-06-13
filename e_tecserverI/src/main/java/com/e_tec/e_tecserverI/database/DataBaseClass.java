@@ -5,14 +5,18 @@ import java.util.List;
 import java.util.Map;
 
 import com.e_tec.e_tecserverI.model.Client;
+import com.e_tec.e_tecserverI.model.DistributionCenter;
 import com.e_tec.e_tecserverI.model.Product;
+import com.e_tec.e_tecserverI.model.Package;
 import com.e_tec.e_tecserverI.xml.parser.XMLParserClient;
 import com.e_tec.e_tecserverI.xml.parser.XMLParserProduct;
 
 public class DataBaseClass {
 	
 	private static Map<Integer, Product> productList = new HashMap<>();
-    private static Map<String, Client> clientList = new HashMap<>();      
+    private static Map<String, Client> clientList = new HashMap<>();  
+    private static Map<Integer, Package> packageList = new HashMap<>();
+    private static Map<String, DistributionCenter> distributionList = new HashMap<>();
     
     public static Map<Integer, Product> getProductList() {
     	List<Product> products = XMLParserProduct.getNodes();
@@ -28,5 +32,13 @@ public class DataBaseClass {
     		clientList.put(client.getName(), client);
     	}
         return clientList;
+    }
+    
+    public static Map<Integer, Package> getPackageList() {
+    	return packageList;
+    }
+    
+    public static Map<String, DistributionCenter> getDistributionList() {
+    	return distributionList;
     }
 }

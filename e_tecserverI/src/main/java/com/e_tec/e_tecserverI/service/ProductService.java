@@ -6,6 +6,12 @@ import java.util.Map;
 
 import com.e_tec.e_tecserverI.database.DataBaseClass;
 import com.e_tec.e_tecserverI.model.Product;
+import com.e_tec.e_tecserverI.sortalgorithms.Bubble_sort;
+import com.e_tec.e_tecserverI.sortalgorithms.Insertion_sort;
+import com.e_tec.e_tecserverI.sortalgorithms.Merge_sort;
+import com.e_tec.e_tecserverI.sortalgorithms.Radix_sort;
+import com.e_tec.e_tecserverI.sortalgorithms.Selection_sort;
+import com.e_tec.e_tecserverI.sortalgorithms.Shell_sort;
 import com.e_tec.e_tecserverI.xml.writer.XMLWriterProduct;
 
 public class ProductService {
@@ -13,18 +19,28 @@ public class ProductService {
 	private Map<Integer, Product> productList = DataBaseClass.getProductList();
 
 	public ProductService() {
-//		productList.put(12,	new Product("Horizon Zero Dawn", "http://media.vandal.net/m/26118/horizon-zero-dawn-20173114177_1.jpg",
-//						12, 1, "VideoJuegos", "hgogjeg"));
-//		productList.put(52,	new Product("Parlantes", "http://www.computiendaelectronica.com/wp-content/uploads/2015/08/computienda_electronica_parlantes-2-0-genius-sp-u115-rojos_usb.jpg",
-//						52, 1, "AparatosElectrónicos", "FJDBGB"));
-//		productList.put(11, new Product("Dell Inspiron 15", "http://i.dell.com/sites/imagecontent/products/PublishingImages/inspiron-15-5551-5552-5558-laptop/laptop-inspiron-15-5000-polaris-mag-pdp-module-2.jpg", 
-//						12, 1, "AparatosElectrónicos", "hgogjeg"));
-//		productList.put(53, new Product("Estufa", "https://s3-us-west-1.amazonaws.com/whirlpool-cdn/wp-content/uploads/2016/06/wf5151d.png",
-//						53, 1, "Electrodomesticos", "FJDBGB"));
+		
 	}
 
 	public List<Product> getAllProduct() {
 		return new ArrayList<Product>(productList.values());
+	}
+
+	public List<Product> getSortProduct(String sort) {
+		int[] sortBase = this.sortList(sort);
+		List<Product> products = new ArrayList<Product>(productList.values());
+		ArrayList<Product> sortedProducts = new ArrayList<>();
+
+		for (int i = 0; i < sortBase.length; i++) {
+			for (int j = 0; j < sortBase.length; j++) {
+				if (sortBase[i] == products.get(j).getPrice()) {
+					sortedProducts.add(products.get(j));
+					break;
+				}
+			}
+		}
+
+		return sortedProducts;
 	}
 
 	public List<Product> getAllProductPerCategory(String category) {
@@ -43,15 +59,15 @@ public class ProductService {
 	}
 
 	public Product addProduct(Product product) {
-		
+
 		if (this.isInList(product.getId())) {
 			Product temp = productList.get(product.getId());
 			int amount = temp.getAmount();
 			temp.setAmount(++amount);
 		} else {
 			productList.put(product.getId(), product);
-		}		
-		
+		}
+
 		XMLWriterProduct.writeXML(new ArrayList<>(productList.values()));
 		return product;
 	}
@@ -66,8 +82,8 @@ public class ProductService {
 		return product;
 	}
 
-	public void deleteProduct(int id) {		
-		if (productList.get(id).getAmount() != 1) {			
+	public void deleteProduct(int id) {
+		if (productList.get(id).getAmount() != 1) {
 			Product temp = productList.get(id);
 			int amount = temp.getAmount();
 			temp.setAmount(--amount);
@@ -77,17 +93,58 @@ public class ProductService {
 
 		XMLWriterProduct.writeXML(new ArrayList<>(productList.values()));
 	}
-	
-	private boolean isInList(int id) {				
+
+	private boolean isInList(int id) {
 		boolean found = false;
-		
+
 		for (Product product : productList.values()) {
 			if (product.getId() == id) {
 				found = true;
-				return found;			
+				return found;
 			}
 		}
-		
+
 		return found;
+	}
+
+	private int[] getArray() {
+		int[] aux = new int[productList.size()];
+		ArrayList<Product> products = new ArrayList<Product>(productList.values());
+
+		for (int i = 0; i < aux.length; i++) {
+			aux[i] = products.get(i).getPrice();
+		}
+
+		return aux;
+	}
+
+	private int[] sortList(String sort) {
+		int[] aux = this.getArray();
+		int[] result = new int[aux.length];
+
+		switch (sort) {
+		case "bubble":
+			result = Bubble_sort.bubble(aux);
+			break;
+		case "insertion":
+			result = Insertion_sort.Insertion(aux);
+			break;
+		case "merge":
+			result = Merge_sort.merge(aux);
+			break;
+		// case "quick":
+		// result = Quick_sort.quick(aux);
+		// break;
+		case "radix":
+			result = Radix_sort.radix(aux);
+			break;
+		case "selection":
+			result = Selection_sort.selection(aux);
+			break;
+		case "shell":
+			result = Shell_sort.shell(aux);
+			break;
+		}
+		return result;
 	}
 }

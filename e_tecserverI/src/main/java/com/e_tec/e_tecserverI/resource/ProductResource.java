@@ -1,5 +1,6 @@
 package com.e_tec.e_tecserverI.resource;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -24,9 +25,13 @@ public class ProductResource {
 	ProductService productService = new ProductService();
 
     @GET
-    public List<Product> getProducts(@QueryParam("category") String category) {
+    public List<Product> getProducts(@QueryParam("category") String category, @QueryParam("sort") String sort) {
         if (category != null) {
             return productService.getAllProductPerCategory(category);
+        }
+        
+        if (sort != null) {
+        	return productService.getSortProduct(sort);
         }
 
         return productService.getAllProduct();
@@ -54,5 +59,5 @@ public class ProductResource {
 	@Path("{productId}")
 	public Product getProduct(@PathParam("productId") int id) {
 		return productService.getProduct(id);
-	}
+	}	
 }
