@@ -12,9 +12,9 @@ public class PackageService {
 	private Map<Integer, Package> packageList = DataBaseClass.getPackageList();
 	
 	public PackageService() {
-		packageList.put(1234, new Package(1234, 2, 3));
-		packageList.put(1244, new Package(1244, 2, 4));
-		packageList.put(1254, new Package(1254, 2, 5));
+		packageList.put(1234, new Package(1234, 2, 3, 4, 5));
+		packageList.put(1244, new Package(1244, 2, 4, 6, 7));
+		packageList.put(1254, new Package(1254, 2, 5, 8, 9));
 	}
 	
 	public List<Package> getAllPackage() {

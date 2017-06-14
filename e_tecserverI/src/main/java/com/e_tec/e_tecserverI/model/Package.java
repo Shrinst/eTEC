@@ -3,6 +3,7 @@ package com.e_tec.e_tecserverI.model;
 public class Package {
 	
 	private int code;
+	private int status;	
 	private int initPosX, initPosY;
 	private int finPosX, finPosY;
 	
@@ -10,12 +11,13 @@ public class Package {
 		
 	}
 	
-	public Package(final int code, final int initPosX, final int initPosY) {
+	public Package(final int code, final int initPosX, final int initPosY, final int finPosX, final int finPosY) {
 		this.code = code;
 		this.initPosX = initPosX;
 		this.initPosY = initPosY;
 		this.finPosX = 0;
 		this.finPosY = 0;
+		status = 0;
 	}
 
 	public int getCode() {
@@ -56,6 +58,14 @@ public class Package {
 
 	public void setFinPosY(int finPosY) {
 		this.finPosY = finPosY;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
 	}
 	
 }

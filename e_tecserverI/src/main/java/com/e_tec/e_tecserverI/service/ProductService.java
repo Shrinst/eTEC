@@ -6,17 +6,12 @@ import java.util.Map;
 
 import com.e_tec.e_tecserverI.database.DataBaseClass;
 import com.e_tec.e_tecserverI.model.Product;
-import com.e_tec.e_tecserverI.sortalgorithms.Bubble_sort;
-import com.e_tec.e_tecserverI.sortalgorithms.Insertion_sort;
-import com.e_tec.e_tecserverI.sortalgorithms.Merge_sort;
-import com.e_tec.e_tecserverI.sortalgorithms.Radix_sort;
-import com.e_tec.e_tecserverI.sortalgorithms.Selection_sort;
-import com.e_tec.e_tecserverI.sortalgorithms.Shell_sort;
+import com.e_tec.e_tecserverI.sortalgorithms.SortMaster;
 import com.e_tec.e_tecserverI.xml.writer.XMLWriterProduct;
 
 public class ProductService {
 
-	private Map<Integer, Product> productList = DataBaseClass.getProductList();
+	private static Map<Integer, Product> productList = DataBaseClass.getProductList();
 
 	public ProductService() {
 		
@@ -26,21 +21,14 @@ public class ProductService {
 		return new ArrayList<Product>(productList.values());
 	}
 
-	public List<Product> getSortProduct(String sort) {
-		int[] sortBase = this.sortList(sort);
-		List<Product> products = new ArrayList<Product>(productList.values());
-		ArrayList<Product> sortedProducts = new ArrayList<>();
+	public List<Product> getSortProductInt(final String sort, final boolean AorD) {		
 
-		for (int i = 0; i < sortBase.length; i++) {
-			for (int j = 0; j < sortBase.length; j++) {
-				if (sortBase[i] == products.get(j).getPrice()) {
-					sortedProducts.add(products.get(j));
-					break;
-				}
-			}
-		}
+		return SortMaster.getSortProductInt(sort, getArrayPrice(), AorD);
+	}
+	
+	public List<Product> getSortProductString(final String sort, final boolean AorD) {		
 
-		return sortedProducts;
+		return SortMaster.getSortProductString(sort, getArrayName(), AorD);
 	}
 
 	public List<Product> getAllProductPerCategory(String category) {
@@ -107,7 +95,7 @@ public class ProductService {
 		return found;
 	}
 
-	private int[] getArray() {
+	private int[] getArrayPrice() {
 		int[] aux = new int[productList.size()];
 		ArrayList<Product> products = new ArrayList<Product>(productList.values());
 
@@ -117,34 +105,19 @@ public class ProductService {
 
 		return aux;
 	}
+	
+	private String[] getArrayName() {
+		String[] aux = new String[productList.size()];
+		ArrayList<Product> products = new ArrayList<Product>(productList.values());
 
-	private int[] sortList(String sort) {
-		int[] aux = this.getArray();
-		int[] result = new int[aux.length];
-
-		switch (sort) {
-		case "bubble":
-			result = Bubble_sort.bubble(aux);
-			break;
-		case "insertion":
-			result = Insertion_sort.Insertion(aux);
-			break;
-		case "merge":
-			result = Merge_sort.merge(aux);
-			break;
-		// case "quick":
-		// result = Quick_sort.quick(aux);
-		// break;
-		case "radix":
-			result = Radix_sort.radix(aux);
-			break;
-		case "selection":
-			result = Selection_sort.selection(aux);
-			break;
-		case "shell":
-			result = Shell_sort.shell(aux);
-			break;
+		for (int i = 0; i < aux.length; i++) {
+			aux[i] = products.get(i).getName();
 		}
-		return result;
+		
+		return aux;
 	}
+
+	public static Map<Integer, Product> getProductList() {
+		return productList;
+	}		
 }
