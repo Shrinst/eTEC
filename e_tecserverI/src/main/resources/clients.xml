@@ -3,27 +3,7 @@
   <client>
     <name>Emmanuelle</name>
     <photo>https://graph.facebook.com/1265817256869503/picture?height=200&amp;width=200&amp;migration_overrides=%7Boctober_2012%3Atrue%7D</photo>
-    <cart>
-      <product>
-        <name>Whirlpool JT 479 IX Encimera 33L 1000W Negro</name>
-        <imageURL>https://images-na.ssl-images-amazon.com/images/I/81xFX4VVrXL._SL1500_.jpg</imageURL>
-        <id>577694</id>
-        <description>Electrodomesticos</description>
-        <category>Acero inoxidable - Microondas (Encimera, 33 L, 1000 W,
-			Giratorio, Tocar, Negro, Acero inoxidable, 1200 W)</category>
-        <amount>38</amount>
-        <price>50</price>
-      </product>
-      <product>
-        <name>Play Station 4</name>
-        <imageURL>https://images-na.ssl-images-amazon.com/images/I/51ROi4d4puL._AC_SX215_.jpg</imageURL>
-        <id>486832</id>
-        <description>VideoJuegos</description>
-        <category>hgogjeg</category>
-        <amount>8</amount>
-        <price>275</price>
-      </product>
-    </cart>
+    <cart />
   </client>
   <client>
     <name>Noguera</name>

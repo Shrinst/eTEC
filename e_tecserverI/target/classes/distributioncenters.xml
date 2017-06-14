@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DistributionCenter>
+  
+  <distribution>
+    <name>Multiplaza</name>
+    <type>VideoJuegos</type>
+    <posX>13</posX>
+    <posY>15</posY>
+  </distribution>  
+  <distribution>
+    <name>Paseo Metropoli</name>
+    <type>VideoJuegos</type>
+    <posX>13</posX>
+    <posY>16</posY>
+  </distribution>
+</DistributionCenter>

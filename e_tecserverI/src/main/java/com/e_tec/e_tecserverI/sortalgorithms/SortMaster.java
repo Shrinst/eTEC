@@ -14,7 +14,7 @@ public class SortMaster {
 		int[] sortBase = getBaseArrayInteger(sort, array, AorD);
 		List<Product> products = new ArrayList<Product>(productList);
 		ArrayList<Product> sortedProducts = new ArrayList<>();
-
+		
 		for (int i = 0; i < sortBase.length; i++) {
 			for (int j = 0; j < sortBase.length; j++) {
 				if (sortBase[i] == products.get(j).getPrice()) {
@@ -32,16 +32,13 @@ public class SortMaster {
 		List<Product> products = new ArrayList<Product>(productList);
 		ArrayList<Product> sortedProducts = new ArrayList<>();	
 		
-		System.out.println(products.size() + "Hola");
-
 		for (int i = 0; i < sortBase.length; i++) {
-			for (int j = 0; j < sortBase.length; j++) {
-				//System.out.println(products.get(j).getName().trim());
+			for (int j = 0; j < sortBase.length; j++) {			
 				
-//				if (sortBase[i].equals(products.get(j).getName())) {
-//					sortedProducts.add(products.get(j));
-//					break;
-//				}
+				if (sortBase[i].equals(products.get(j).getName())) {
+					sortedProducts.add(products.get(j));
+					break;
+				}
 			}
 		}
 
@@ -54,23 +51,11 @@ public class SortMaster {
 		if (AorD) {
 			aux = sortListIntegerA(sort, array);
 		} else {
-
+			aux = sortListIntegerD(sort, array);
 		}
 
 		return aux;
-	}
-	
-	private static String[] getBaseArrayString(String sort, String[] array, boolean AorD) {
-		String aux[] = new String[array.length];
-		
-		if (AorD) {
-			aux = sortListStringA(sort, array);
-		} else {
-
-		}
-
-		return aux;
-	}
+	}	
 
 	private static int[] sortListIntegerA(String sort, int[] array) {
 		int[] aux = array;
@@ -78,28 +63,66 @@ public class SortMaster {
 
 		switch (sort) {
 		case "bubble":
-			result = Bubble_sort.sortInteger(aux);
+			result = Bubble_sort.sortIntegerA(aux);
 			break;
 		case "insertion":
-			result = Insertion_sort.Insertion(aux);
+			result = Insertion_sort.sortIntegerD(aux);
 			break;
 		case "merge":
-			result = Merge_sort.merge(aux);
+			result = Merge_sort.sortIntegerA(aux);
 			break;
-		// case "quick":
-		// result = Quick_sort.quick(aux);
-		// break;
+		 case "quick":
+			 result = Quick_sort.sortIntegerA(aux);
+		 break;
 		case "radix":
 			result = Radix_sort.radix(aux);
 			break;
 		case "selection":
-			result = Selection_sort.selection(aux);
+			result = Selection_sort.sortIntegerA(aux);
 			break;
 		case "shell":
-			result = Shell_sort.shell(aux);
+			result = Shell_sort.sortIntegerA(aux);
 			break;
 		}
 		return result;
+	}
+	
+	private static int[] sortListIntegerD(String sort, int[] array) {
+		int[] aux = array;
+		int[] result = new int[aux.length];
+
+		switch (sort) {
+		case "bubble":
+			result = Bubble_sort.sortIntegerD(aux);
+			break;	
+		case "insertion":
+			result = Insertion_sort.sortIntegerD(aux);
+			break;
+		case "merge":
+			result = Merge_sort.sortIntegerD(aux);
+			break;
+		case "selection":
+			result = Selection_sort.sortIntegerD(aux);
+			break;
+		case "shell":
+			result = Selection_sort.sortIntegerD(aux);
+			break;
+		}
+		return result;
+	}
+	
+	///////////////////////---------------------String------------------------------------////////////////////////////////
+	
+	private static String[] getBaseArrayString(String sort, String[] array, boolean AorD) {
+		String aux[] = new String[array.length];
+		
+		if (AorD) {
+			aux = sortListStringA(sort, array);
+		} else {
+			aux = sortListStringD(sort, array);
+		}
+
+		return aux;
 	}
 	
 	private static String[] sortListStringA(String sort, String[] array) {
@@ -108,10 +131,53 @@ public class SortMaster {
 
 		switch (sort) {
 		case "bubble":
-			result = Bubble_sort.sortString(aux);
+			result = Bubble_sort.sortStringA(aux);
+			break;
+		case "selection":
+			result = Selection_sort.sortStringA(aux);
+			break;
+		case "insertion":
+			result = Insertion_sort.sortStringA(aux);
+			break;
+		case "merge":
+			result = Merge_sort.sortStringA(aux);
+			break;
+		case "quick":
+			result = Quick_sort.sortStringA(aux);
+			break;
+		case "shell":
+			result = Shell_sort.sortStringA(aux);
 			break;
 		}
 		
 		return result;
 	}
+	
+	private static String[] sortListStringD(String sort, String[] array) {
+		String[] aux = array;
+		String[] result = new String[aux.length];
+
+		switch (sort) {
+		case "shell":
+			result = Shell_sort.sortStringD(aux);
+			break;
+		case "selection":
+			result = Selection_sort.sortStringD(aux);
+			break;
+		case "quick":
+			result = Quick_sort.sortStringD(aux);
+			break;
+		case "merge":
+			result = Merge_sort.sortStringD(aux);
+			break;
+		case "insertion":
+			result = Insertion_sort.sortStringD(aux);
+			break;
+		case "bubble":
+			result = Bubble_sort.sortStringD(aux);
+			break;
+		}
+		
+		return result;
+	}	
 }
