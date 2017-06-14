@@ -7,6 +7,8 @@ public class DistributionCenter {
 	private int posX;
 	private int posY;
 	
+	private DistributionCenter next;
+	
 	public DistributionCenter() {
 		
 	}
@@ -48,5 +50,13 @@ public class DistributionCenter {
 
 	public void setPosY(int posY) {
 		this.posY = posY;
+	}
+
+	public DistributionCenter getNext() {
+		return next;
+	}
+
+	public void setNext(DistributionCenter next) {
+		this.next = next;
 	}	
 }
