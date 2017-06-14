@@ -7,6 +7,8 @@ public class Package {
 	private int initPosX, initPosY;
 	private int finPosX, finPosY;
 	
+	private Package next;
+	
 	public Package() {
 		
 	}
@@ -66,6 +68,14 @@ public class Package {
 
 	public void setStatus(int status) {
 		this.status = status;
+	}
+
+	public Package getNext() {
+		return next;
+	}
+
+	public void setNext(Package next) {
+		this.next = next;
 	}
 	
 }
