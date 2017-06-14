@@ -2,37 +2,139 @@ package com.e_tec.e_tecserverI.sortalgorithms;
 
 public class Quick_sort {
 
-	public static int[] quick(int A[]) {
+	public static int[] sortIntegerA(int A[]) {
 
-		return quicksort(A, 0, A.length - 1);
+		return quickSort(A, 0, A.length - 1);
 
 	}
 
-	private static int[] quicksort(int A[], int izq, int der) {
-
-		int pivote = A[izq]; // tomamos primer elemento como pivote
-		int i = izq; // i realiza la b�squeda de izquierda a derecha
-		int j = der; // j realiza la b�squeda de derecha a izquierda
-		int aux;
-
-		while (i < j) { // mientras no se crucen las b�squedas
-			while (A[i] < pivote && i < j)
-				i++; // busca elemento mayor que pivote
-			while (A[j] > pivote)
-				j--; // busca elemento menor que pivote
-			if (i < j) { // si no se han cruzado
-				aux = A[i]; // los intercambia
-				A[i] = A[j];
-				A[j] = aux;
+	public static int[] quickSort(int vec[], int inicio, int fin) {
+		if (inicio >= fin)
+			return null;
+		int pivote = vec[inicio];
+		int elemIzq = inicio + 1;
+		int elemDer = fin;
+		while (elemIzq <= elemDer) {
+			while (elemIzq <= fin && vec[elemIzq] < pivote) {
+				elemIzq++;
+			}
+			while (elemDer > inicio && vec[elemDer] >= pivote) {
+				elemDer--;
+			}
+			if (elemIzq < elemDer) {
+				int temp = vec[elemIzq];
+				vec[elemIzq] = vec[elemDer];
+				vec[elemDer] = temp;
 			}
 		}
-		A[izq] = A[j]; // se coloca el pivote en su lugar de forma que tendremos
-		A[j] = pivote; // los menores a su izquierda y los mayores a su derecha
-		if (izq < j - 1)
-			quicksort(A, izq, j - 1); // ordenamos subarray izquierdo
-		if (j + 1 < der)
-			quicksort(A, j + 1, der); // ordenamos subarray derecho
-		return A;
-	}
 
+		if (elemDer > inicio) {
+			int temp = vec[inicio];
+			vec[inicio] = vec[elemDer];// swap
+			vec[elemDer] = temp;
+		}
+		quickSort(vec, inicio, elemDer - 1);
+		quickSort(vec, elemDer + 1, fin);
+		return vec;
+	}
+	
+	///////////////////////--------------------------String-------------------------///////////////////////////////
+	public static String[] sortStringA(String[] arr){
+
+		int low = 0;
+		int high = arr.length - 1;
+ 
+		qSortA(arr, low, high);
+		
+		return arr;
+    }
+
+	private static void qSortA(String[] arr, int low, int high) {
+		if (arr == null || arr.length == 0)
+			return;
+ 
+		if (low >= high)
+			return;
+ 
+		// pick the pivot
+		int middle = low + (high - low) / 2;
+		String pivot = arr[middle];
+ 
+		// make left < pivot and right > pivot
+		int i = low, j = high;
+		while (i <= j) {
+			while (arr[i].compareTo(pivot) < 0) {
+				i++;
+			}
+ 
+			while (arr[j].compareTo(pivot) > 0) {
+				j--;
+			}
+ 
+			if (i <= j) {
+				String temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+				i++;
+				j--;
+			}
+		}
+ 
+		// recursively sort two sub parts
+		if (low < j)
+			qSortA(arr, low, j);
+ 
+		if (high > i)
+			qSortA(arr, i, high);
+	}
+	
+	public static String[] sortStringD(String[] arr){
+
+		int low = 0;
+		int high = arr.length - 1;
+ 
+		qSortB(arr, low, high);
+		
+		return arr;
+    }
+
+	private static void qSortB(String[] arr, int low, int high) {
+		if (arr == null || arr.length == 0)
+			return;
+ 
+		if (low >= high)
+			return;
+ 
+		// pick the pivot
+		int middle = low + (high - low) / 2;
+		String pivot = arr[middle];
+ 
+		// make left < pivot and right > pivot
+		int i = low, j = high;
+		while (i <= j) {
+			while (arr[i].compareTo(pivot) > 0) {
+				i++;
+			}
+ 
+			while (arr[j].compareTo(pivot) < 0) {
+				j--;
+			}
+ 
+			if (i <= j) {
+				String temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+				i++;
+				j--;
+			}
+		}
+ 
+		// recursively sort two sub parts
+		if (low < j)
+			qSortB(arr, low, j);
+ 
+		if (high > i)
+			qSortB(arr, i, high);
+	}	
+   
 }

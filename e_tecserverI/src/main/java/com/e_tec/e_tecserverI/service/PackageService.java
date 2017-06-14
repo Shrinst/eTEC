@@ -6,15 +6,14 @@ import java.util.Map;
 
 import com.e_tec.e_tecserverI.database.DataBaseClass;
 import com.e_tec.e_tecserverI.model.Package;
+import com.e_tec.e_tecserverI.xml.writer.XMLWriterPackage;
 
 public class PackageService {
 	
 	private Map<Integer, Package> packageList = DataBaseClass.getPackageList();
 	
 	public PackageService() {
-		packageList.put(1234, new Package(1234, 2, 3, 4, 5));
-		packageList.put(1244, new Package(1244, 2, 4, 6, 7));
-		packageList.put(1254, new Package(1254, 2, 5, 8, 9));
+		
 	}
 	
 	public List<Package> getAllPackage() {
@@ -27,7 +26,7 @@ public class PackageService {
 
 	public Package addPackage(Package package1) {
 		packageList.put(package1.getCode(), package1);
-		//XMLWriterClient.writeXML(new ArrayList<Client>(clientList.values()));
+		XMLWriterPackage.writeXML(new ArrayList<Package>(packageList.values()));
 		return package1;
 	}
 
@@ -37,13 +36,13 @@ public class PackageService {
 		}
 
 		packageList.put(package1.getCode(), package1);
-		//XMLWriterClient.writeXML(new ArrayList<Client>(clientList.values()));
+		XMLWriterPackage.writeXML(new ArrayList<Package>(packageList.values()));
 		return package1;
 	}
 
 	public void deletePackage(int key) {
 		packageList.remove(key);
-		//XMLWriterClient.writeXML(new ArrayList<Client>(clientList.values()));
+		XMLWriterPackage.writeXML(new ArrayList<Package>(packageList.values()));
 	}
 
 }

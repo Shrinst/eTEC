@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Packages>
+  <package>
+    <code>1264</code>
+    <status>0</status>
+    <initPosX>2</initPosX>
+    <initPosY>3</initPosY>
+    <finPosX>0</finPosX>
+    <finPosY>0</finPosY>
+  </package>
+  <package>
+    <code>1234</code>
+    <status>0</status>
+    <initPosX>2</initPosX>
+    <initPosY>3</initPosY>
+    <finPosX>0</finPosX>
+    <finPosY>0</finPosY>
+  </package>  
+  <package>
+    <code>1244</code>
+    <status>0</status>
+    <initPosX>2</initPosX>
+    <initPosY>3</initPosY>
+    <finPosX>0</finPosX>
+    <finPosY>0</finPosY>
+  </package>
+</Packages>

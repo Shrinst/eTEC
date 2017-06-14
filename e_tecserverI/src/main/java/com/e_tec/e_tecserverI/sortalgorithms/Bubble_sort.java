@@ -2,7 +2,7 @@ package com.e_tec.e_tecserverI.sortalgorithms;
 
 public class Bubble_sort {
 
-	public static int[] sortInteger(int A[]) {
+	public static int[] sortIntegerA(int A[]) {
 		int i, j;
 		int aux;
 		for (i = 0; i < A.length - 1; i++)
@@ -15,20 +15,58 @@ public class Bubble_sort {
 		return A;
 	}
 	
-	public static String[] sortString(String[] list) {
-		String temp;
-
-		for (int i = 0; i < list.length - 1; i++) {
-			for (int j = 0; j < list.length - i - 1; j++) {
-				if (list[j].compareTo(list[(j + 1)]) > 0) {
-					temp = list[j];
-					list[j + 1] = list[j];
-					list[j] = temp;
+	public static int[] sortIntegerD(int A[]) {
+		int i, j;
+		int aux;
+		for (i = 0; i < A.length - 1; i++)
+			for (j = 0; i < A.length - j - 1; j++)
+				if (A[j + 1] > A[j]) {
+					aux = A[j + 1];
+					A[j + 1] = A[j];
+					A[j] = aux;
 				}
-			}
-		}
-		
-		return list;
+		return A;
+	}	
+	
+	////////////////////////////////////-----------------String----------------------/////////////////////////////////
+	public static String[] sortStringA(String[] arr) {
 
+	    int n = arr.length;
+	    String temp = null;
+
+	    for (int i = 0; i < n; i++) {
+	        for (int j = 1; j < (n - i); j++) {
+
+	            if (arr[j - 1].compareTo(arr[j]) > 0) {
+	                temp = arr[j - 1];
+	                arr[j - 1] = arr[j];
+	                arr[j] = temp;
+	            }
+
+	        }
+	    }	
+	    
+	    return arr;
 	}
+	
+	public static String[] sortStringD(String[] arr) {
+
+	    int n = arr.length;
+	    String temp = null;
+
+	    for (int i = 0; i < n; i++) {
+	        for (int j = 1; j < (n - i); j++) {
+
+	            if (arr[j - 1].compareTo(arr[j]) < 0) {
+	                temp = arr[j - 1];
+	                arr[j - 1] = arr[j];
+	                arr[j] = temp;
+	            }
+
+	        }
+	    }
+	    
+	    return arr;
+	}
+	
 }
