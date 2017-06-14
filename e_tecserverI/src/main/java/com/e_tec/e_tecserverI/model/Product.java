@@ -9,6 +9,7 @@ public class Product {
     private String category;
     private int price;
     private int amount;
+    private Product next;
     
     public Product() {
         
@@ -78,5 +79,13 @@ public class Product {
 
 	public void setPrice(int price) {
 		this.price = price;
+	}
+
+	public Product getNext() {
+		return next;
+	}
+
+	public void setNext(Product next) {
+		this.next = next;
 	}     
 }
