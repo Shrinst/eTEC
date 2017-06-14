@@ -8,7 +8,9 @@ public class Client {
 	private String photo;
 	private ArrayList<Product> cart; 
 	// https://stackoverflow.com/questions/39004951/parsing-json-array-inside-jsonobject-in-android	
-
+	private Client next;
+	
+	
 	public Client() {
 
 	}
@@ -41,6 +43,14 @@ public class Client {
 
 	public void setCart(ArrayList<Product> cart) {
 		this.cart = cart;
+	}
+
+	public Client getNext() {
+		return next;
+	}
+
+	public void setNext(Client next) {
+		this.next = next;
 	}
 
 }
