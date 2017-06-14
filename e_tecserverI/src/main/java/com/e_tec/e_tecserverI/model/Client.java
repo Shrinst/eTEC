@@ -6,10 +6,11 @@ public class Client {
 
 	private String name;
 	private String photo;
-	private Client next;
 	private ArrayList<Product> cart; 
 	// https://stackoverflow.com/questions/39004951/parsing-json-array-inside-jsonobject-in-android	
+	private Client next;
 
+	
 	public Client() {
 
 	}

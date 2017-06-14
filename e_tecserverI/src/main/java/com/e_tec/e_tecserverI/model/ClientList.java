@@ -48,7 +48,7 @@ public class ClientList {
 	
 	public void deleteLast(){
 		if (!(this.isEmpty())){
-			if (this.len()!=1){
+			if (this.getHead().getNext() == null){
 				Client temp = _head;
 				while (temp.getNext().getNext()!=null){
 					temp = temp.getNext();
@@ -117,16 +117,15 @@ public class ClientList {
 		}
 	}
 	
-	public int len(){
-		int cont = 0;
-		Client temp = _head;
-		while (temp!=null){
-			cont++;
-			temp = temp.getNext();
+
+	public void updateNode(String name, Client newInfo){
+		Client oldInfo = this.search(name);
+		if (oldInfo != null ){
+			oldInfo.setCart(newInfo.getCart());
+			oldInfo.setPhoto(newInfo.getPhoto());
 		}
-		return cont;
+		
 	}
-	
 
 	
 

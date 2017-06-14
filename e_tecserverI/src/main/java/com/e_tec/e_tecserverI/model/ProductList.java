@@ -46,7 +46,7 @@ private Product _head;
 	
 	public void deleteLast(){
 		if (!(this.isEmpty())){
-			if (this.len()!=1){
+			if (this.getHead().getNext() == null){
 				Product temp = _head;
 				while (temp.getNext().getNext()!=null){
 					temp = temp.getNext();
@@ -115,17 +115,16 @@ private Product _head;
 		}
 	}
 	
-	public int len(){
-		int cont = 0;
-		Product temp = _head;
-		while (temp!=null){
-			cont++;
-			temp = temp.getNext();
+	public void updateNode(int id, Product newInfo){
+		Product oldInfo = this.search(id);
+		if (oldInfo != null){
+			oldInfo.setAmount(newInfo.getAmount());
+			oldInfo.setCategory(newInfo.getCategory());
+			oldInfo.setDescription(newInfo.getDescription());
+			oldInfo.setImageURL(newInfo.getImageURL());
+			oldInfo.setPrice(newInfo.getPrice());
 		}
-		return cont;
 	}
-	
-
 	
 
 	public Product getHead() {

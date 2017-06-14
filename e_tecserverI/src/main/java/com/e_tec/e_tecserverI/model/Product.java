@@ -9,6 +9,8 @@ public class Product {
     private String category;
     private int price;
     private int amount;
+    
+    
     private Product next;
     
     public Product() {
